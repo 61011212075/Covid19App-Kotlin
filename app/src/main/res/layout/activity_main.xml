@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="5dp"
+        android:textSize="30sp"
+        android:letterSpacing="0.04"
+        android:fontFamily="sans-serif-black"
+        android:text="สถานะการณ์ Covid-19"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/thailand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="5dp"
+        android:textSize="46sp"
+        android:letterSpacing="0.04"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="ในประเทศไทย"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_new_cases"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="5dp"
+        app:cardBackgroundColor="@color/orange"
+        app:layout_constraintTop_toBottomOf="@+id/thailand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/card_recovered"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/new_cases_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="ผู้ติดเชื้อใหม่">
+            </TextView>
+
+            <TextView
+                android:id="@+id/new_cases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:paddingBottom="3dp"
+                android:layout_gravity="center_horizontal"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-black"
+                android:text="+20,154 ">
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_cases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="สะสม 3,236,256 ">
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_recovered"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="5dp"
+        app:cardBackgroundColor="@color/green"
+        app:layout_constraintStart_toEndOf="@id/card_new_cases"
+        app:layout_constraintTop_toBottomOf="@id/thailand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recovered_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="รักษาหาย">
+            </TextView>
+
+            <TextView
+                android:id="@+id/recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:textSize="28sp"
+                android:layout_gravity="center_horizontal"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-black"
+                android:text="+20,154 ">
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="สะสม 3,236,256 ">
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_death"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        app:cardBackgroundColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/card_new_cases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/card_date"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/death_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="ตาย">
+            </TextView>
+
+            <TextView
+                android:id="@+id/death"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-black"
+                android:text="+68 ">
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_death"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_gravity="center_horizontal"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="สะสม 62,238 ">
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_date"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        app:cardBackgroundColor="@color/blue"
+        app:layout_constraintStart_toEndOf="@id/card_death"
+        app:layout_constraintTop_toBottomOf="@id/card_new_cases"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="ข้อมูล ณ วันที่">
+            </TextView>
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                android:letterSpacing="0.04"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-black"
+                android:text="1 มีนาคม 2565">
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/card_death"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:paddingStart="20dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="10dp"
+                    android:letterSpacing="0.01"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/black"
+                    android:text="ยอดผู้ติดเชื้อแต่ละจังหวัด">
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal">
+
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        app:cardCornerRadius="15dp"-->
+<!--                        app:cardBackgroundColor="@color/gray">-->
+<!--                        <EditText-->
+<!--                            android:id="@+id/edit_text_search"-->
+<!--                            android:layout_width="280dp"-->
+<!--                            android:layout_height="48dp"-->
+<!--                            android:layout_marginStart="15dp"-->
+<!--                            android:background="@color/gray"-->
+<!--                            android:ems="10"-->
+<!--                            android:fontFamily="@font/poppins"-->
+<!--                            android:hint="ค้นหาจังหวัด"-->
+<!--                            android:importantForAutofill="no"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="#616161" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
+                </LinearLayout>
+                <TableLayout
+                    android:id="@+id/table_data"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,2,3"
+                    android:layout_margin="10dp">
+
+                    <TableRow
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="97dp"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            android:layout_marginHorizontal="1dp"
+                            android:padding="10dp"
+                            android:text="จังหวัด"
+                            android:textColor="@color/white"
+                            android:background="#6D7AE0"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="99dp"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="ติดเชื้อเพิ่ม"
+                            android:textColor="@color/white"
+                            android:background="#6D7AE0"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="67dp"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            android:layout_marginHorizontal="1dp"
+                            android:padding="10dp"
+                            android:text="ตาย"
+                            android:textColor="@color/white"
+                            android:background="#6D7AE0"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_province"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
